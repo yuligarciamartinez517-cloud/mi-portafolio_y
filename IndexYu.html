@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio Profesional | Yuridia García Martínez - Técnica e Ingeniera en Informática</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            },
+            accent: {
+              500: '#10b981',
+              600: '#059669',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+    }
+    .dark .glass-card {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(51, 65, 85, 0.5);
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #0284c7;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300 min-h-screen flex flex-col">
+
+  <!-- BARRA DE NAVEGACIÓN -->
+  <header class="sticky top-0 z-50 glass-card shadow-sm border-b border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        
+        <!-- Logo / Marca -->
+        <div class="flex items-center gap-3">
+          <div class="relative group">
+            <img id="navProfilePhoto" src="55321.jpg" alt="Fotografía Yuridia García" class="w-10 h-10 rounded-full object-cover ring-2 ring-brand-500 shadow-md" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600'">
+            <span class="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-white dark:border-slate-900 rounded-full"></span>
+          </div>
+          <div>
+            <span class="font-bold text-slate-900 dark:text-white text-base tracking-tight block leading-tight" id="headerName">
+              Yuridia García Martínez
+            </span>
+            <span class="text-xs text-brand-600 dark:text-brand-400 font-medium">
+              Técnico e Ing. en Informática
+            </span>
+          </div>
+        </div>
+
+        <!-- Menú de Navegación Escritorio -->
+        <nav class="hidden md:flex items-center gap-1 lg:gap-2 text-sm font-medium">
+          <a href="#perfil" class="px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 transition-colors">Perfil</a>
+          <a href="#habilidades" class="px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 transition-colors">Habilidades</a>
+          <a href="#formacion" class="px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 transition-colors">Formación</a>
+          <a href="#proyectos" class="px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 transition-colors">Portafolio</a>
+          <a href="#actividades" class="px-3 py-2 rounded-lg bg-brand-500/10 text-brand-600 dark:text-brand-400 hover:bg-brand-500/20 font-semibold transition-colors flex items-center gap-1.5">
+            <i class="fa-solid fa-list-check text-xs"></i>
+            Gestor de Actividades
+          </a>
+          <a href="#contacto" class="px-3 py-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 transition-colors">Contacto</a>
+        </nav>
+
+        <!-- Botones de Acción Extra -->
+        <div class="flex items-center gap-2">
+          <!-- Toggle Modo Oscuro -->
+          <button id="themeToggleBtn" aria-label="Cambiar tema de color" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-brand-500 transition-colors">
+            <i class="fa-solid fa-moon dark:hidden"></i>
+            <i class="fa-solid fa-sun hidden dark:block text-amber-400"></i>
+          </button>
+
+          <!-- Botón Menú Móvil -->
+          <button id="mobileMenuBtn" aria-label="Abrir menú de navegación" class="md:hidden p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">
+            <i class="fa-solid fa-bars text-lg"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Menú Desplegable Móvil -->
+    <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-4 pt-2 pb-4 space-y-2">
+      <a href="#perfil" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">01. Perfil Profesional</a>
+      <a href="#habilidades" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">02. Habilidades y Soporte</a>
+      <a href="#formacion" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">03. Formación Académica</a>
+      <a href="#proyectos" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">04. Portafolio de Proyectos</a>
+      <a href="#actividades" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-semibold text-brand-600 dark:text-brand-400 bg-brand-50 dark:bg-brand-950/50">05. Gestor de Actividades</a>
+      <a href="#contacto" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">06. Contacto &amp; Metas</a>
+    </div>
+  </header>
+
+  <!-- SECCIÓN HERO / PRESENTACIÓN PRINCIPAL -->
+  <section class="relative py-12 md:py-20 overflow-hidden bg-gradient-to-b from-brand-50/50 via-transparent to-transparent dark:from-slate-900/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        
+        <!-- Columna Texto Hero -->
+        <div class="md:col-span-7 space-y-6 text-center md:text-left">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-brand-100 text-brand-800 dark:bg-brand-900/60 dark:text-brand-300 border border-brand-200 dark:border-brand-700/50">
+            <span class="w-2 h-2 rounded-full bg-brand-500 animate-pulse"></span>
+            Técnico Titulado + Estudiante Universitario de Ingeniería
+          </div>
+          
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
+            Desarrollo Web, Programación e <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-emerald-500">Infraestructura TI</span>
+          </h1>
+
+          <p class="text-slate-600 dark:text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
+            Me estoy desarrollando profesionalmente en el área de la tecnología, con interés en la programación, el desarrollo web (Astro, HTML5, JS) y la gestión de infraestructura física (ponchado de cables Ethernet, mantenimiento preventivo/correctivo de cómputo e impresoras, y sistemas operativos).
+          </p>
+
+          <!-- Badges Rápidos -->
+          <div class="flex flex-wrap gap-2 justify-center md:justify-start pt-1 text-xs">
+            <span class="px-2.5 py-1 rounded-md bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium"><i class="fa-solid fa-code text-brand-500 mr-1"></i> Astro &amp; HTML5</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium"><i class="fa-solid fa-network-wired text-brand-500 mr-1"></i> Cableado RJ45</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium"><i class="fa-solid fa-laptop-medical text-brand-500 mr-1"></i> Mantenimiento PC &amp; RAM</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium"><i class="fa-solid fa-print text-brand-500 mr-1"></i> Rep. Impresoras</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300 font-medium"><i class="fa-solid fa-microchip text-brand-500 mr-1"></i> ESP32 &amp; Arduino</span>
+          </div>
+
+          <!-- Botones de Acción -->
+          <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 pt-4">
+            <a href="#actividades" class="px-6 py-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm shadow-lg shadow-brand-500/25 transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+              <i class="fa-solid fa-cloud-arrow-up"></i>
+              Gestor de Actividades
+            </a>
+            <a href="#proyectos" class="px-6 py-3 rounded-xl bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 font-semibold text-sm transition-all flex items-center gap-2">
+              <i class="fa-solid fa-folder-open"></i>
+              Ver Proyectos ↓
+            </a>
+          </div>
+        </div>
+
+        <!-- Columna Tarjeta de Foto Oficial -->
+        <div class="md:col-span-5 flex justify-center">
+          <div class="relative w-full max-w-xs sm:max-w-sm group">
+            <!-- Efecto Resplandor de Fondo -->
+            <div class="absolute -inset-1 bg-gradient-to-r from-brand-500 to-emerald-500 rounded-2xl blur-lg opacity-40 group-hover:opacity-75 transition duration-500"></div>
+            
+            <div class="relative glass-card rounded-2xl p-5 shadow-2xl space-y-4 text-center">
+              <div class="relative overflow-hidden rounded-xl border-2 border-brand-500/30">
+                <img id="mainProfilePhoto" src="55321.jpg" alt="Fotografía Oficial Yuridia García Martínez" class="w-full h-80 object-cover object-top rounded-lg transform group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600'">
+              </div>
+
+              <div>
+                <h3 class="text-xl font-bold text-slate-900 dark:text-white" id="profileCardName">Yuridia García Martínez</h3>
+                <p class="text-xs font-semibold text-brand-600 dark:text-brand-400 uppercase tracking-wider mt-0.5">
+                  Profesionista en Desarrollo de TI
+                </p>
+              </div>
+
+              <div class="pt-2 border-t border-slate-200 dark:border-slate-800 text-left text-xs space-y-2 text-slate-600 dark:text-slate-300">
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-graduation-cap text-brand-500 w-4"></i>
+                  <span><strong>Institución:</strong> TES San Felipe del Progreso</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-certificate text-emerald-500 w-4"></i>
+                  <span><strong>Título:</strong> Técnico en Informática</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-envelope text-brand-500 w-4"></i>
+                  <span>yuridiagarciamartinez2403@gmail.com</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-phone text-brand-500 w-4"></i>
+                  <span>712 207 7296 / 729 286 3638</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 01: PERFIL PROFESIONAL & VALORES -->
+  <section id="perfil" class="py-16 bg-white dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-brand-600 dark:text-brand-400 font-bold text-xs uppercase tracking-widest">01 · Mi Perfil</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Perfil Profesional &amp; Enfoque</h2>
+        <div class="w-12 h-1 bg-brand-500 mx-auto mt-3 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+        
+        <!-- Sobre Mí -->
+        <div class="glass-card p-6 sm:p-8 rounded-2xl flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xl font-bold">
+              <i class="fa-solid fa-user-gear"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white">Sobre mí</h3>
+            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+              Soy una persona autodidacta, responsable y comunicativa, interesada en el desarrollo de software, el diseño de páginas web y la infraestructura informática. Cuento con experiencia en soporte técnico práctico y actualmente continúo fortaleciendo mis estudios en la carrera de <strong>Ingeniería en Informática</strong> en el Tecnológico de Estudios Superiores de San Felipe del Progreso (TESSFP).
+            </p>
+            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+              Me enfoco en construir soluciones funcionales, optimizar equipos de computo, estructurar bases de datos y aplicar tecnologías como Astro, HTML, Java, Python y microcontroladores.
+            </p>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold">Técnico Titulado</span>
+            <span class="px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold">Estudiante de Ingeniería</span>
+            <span class="px-2.5 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-semibold">Soporte Técnico Operativo</span>
+          </div>
+        </div>
+
+        <!-- Mis Valores Profesionales -->
+        <div class="glass-card p-6 sm:p-8 rounded-2xl">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl font-bold mb-4">
+            <i class="fa-solid fa-award"></i>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">Mis Valores de Trabajo</h3>
+          
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+              <div class="font-bold text-slate-900 dark:text-white text-sm flex items-center gap-2">
+                <i class="fa-solid fa-circle-check text-emerald-500 text-xs"></i> Responsabilidad
+              </div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Entrega puntual de tareas, proyectos y mantenimiento programado.</p>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+              <div class="font-bold text-slate-900 dark:text-white text-sm flex items-center gap-2">
+                <i class="fa-solid fa-sitemap text-brand-500 text-xs"></i> Organización
+              </div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Estructuración clara de código, documentación y cableado de red.</p>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+              <div class="font-bold text-slate-900 dark:text-white text-sm flex items-center gap-2">
+                <i class="fa-solid fa-users text-indigo-500 text-xs"></i> Trabajo en equipo
+              </div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Colaboración asertiva con compañeros y atención cálida a usuarios.</p>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+              <div class="font-bold text-slate-900 dark:text-white text-sm flex items-center gap-2">
+                <i class="fa-solid fa-book-open-reader text-amber-500 text-xs"></i> Aprendizaje continuo
+              </div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Constante exploración de nuevas tecnologías, frameworks y herramientas.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 02: HABILIDADES TÉCNICAS & SOPORTE DE HARDWARE -->
+  <section id="habilidades" class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-brand-600 dark:text-brand-400 font-bold text-xs uppercase tracking-widest">02 · Competencias</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Habilidades Técnicas &amp; Mantenimiento</h2>
+        <p class="text-slate-600 dark:text-slate-400 text-sm mt-2">Dominio técnico tanto a nivel de infraestructura y hardware como en programación de software.</p>
+      </div>
+
+      <!-- Tarjetas Principales de Soporte de Hardware -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+        
+        <!-- Cableado y Redes -->
+        <div class="glass-card p-6 rounded-2xl hover:border-brand-500/50 transition-all group">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center text-xl font-bold mb-4 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-network-wired"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Ponchado &amp; Redes Ethernet</h3>
+          <p class="text-slate-600 dark:text-slate-300 text-xs leading-relaxed mb-4">
+            Confección y ponchado de cables de red UTP/STP Cat5e/Cat6 utilizando conectores RJ45 bajo los estándares de ponchado T568A y T568B. Pruebas de continuidad y verificación de conectividad LAN.
+          </p>
+          <div class="flex flex-wrap gap-1.5 text-[10px] font-semibold">
+            <span class="px-2 py-0.5 rounded bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300">Norma T568A / T568B</span>
+            <span class="px-2 py-0.5 rounded bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300">Conectores RJ45</span>
+            <span class="px-2 py-0.5 rounded bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300">Tester de Red</span>
+          </div>
+        </div>
+
+        <!-- Mantenimiento PC & RAM/SSD -->
+        <div class="glass-card p-6 rounded-2xl hover:border-brand-500/50 transition-all group">
+          <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xl font-bold mb-4 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-microchip"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Mantenimiento PC, SSD &amp; RAM</h3>
+          <p class="text-slate-600 dark:text-slate-300 text-xs leading-relaxed mb-4">
+            Mantenimiento preventivo (limpieza interna, cambio de pasta térmica) y correctivo. Actualización y cambio de discos duros mecánicos por unidades de estado sólido (SSD SATA/NVMe) y ampliación de memoria RAM.
+          </p>
+          <div class="flex flex-wrap gap-1.5 text-[10px] font-semibold">
+            <span class="px-2 py-0.5 rounded bg-brand-100 text-brand-800 dark:bg-brand-900/40 dark:text-brand-300">Upgrade SSD/NVMe</span>
+            <span class="px-2 py-0.5 rounded bg-brand-100 text-brand-800 dark:bg-brand-900/40 dark:text-brand-300">Expansión RAM</span>
+            <span class="px-2 py-0.5 rounded bg-brand-100 text-brand-800 dark:bg-brand-900/40 dark:text-brand-300">Sistemas Operativos</span>
+          </div>
+        </div>
+
+        <!-- Mantenimiento de Impresoras -->
+        <div class="glass-card p-6 rounded-2xl hover:border-brand-500/50 transition-all group">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xl font-bold mb-4 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-print"></i>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Soporte &amp; Reparación Impresoras</h3>
+          <p class="text-slate-600 dark:text-slate-300 text-xs leading-relaxed mb-4">
+            Diagnóstico, servicio y mantenimiento preventivo/correctivo de impresoras (inyección de tinta y láser). Solución a atascos de papel, purga/limpieza de inyectores y mantenimiento de niveles de tinta/tóner.
+          </p>
+          <div class="flex flex-wrap gap-1.5 text-[10px] font-semibold">
+            <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300">Inyección &amp; Láser</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300">Mantenimiento Físico</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300">Drivers &amp; Red</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Tecnologías y Lenguajes de Programación -->
+      <div class="glass-card p-6 sm:p-8 rounded-2xl">
+        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+          <i class="fa-solid fa-laptop-code text-brand-500"></i>
+          Lenguajes, Frameworks y Herramientas Tecnológicas
+        </h3>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 text-center">
+          
+          <div class="p-3 rounded-xl bg-slate-100 dark:bg-slate-800/50 hover:bg-brand-500/10 transition-colors">
+            <i class="fa-solid fa-rocket text-2xl text-amber-500 mb-1"></i>
+            <div class="font-bold text-xs text-slate-800 dark:text-slate-200">Astro Framework</div>
+            <span class="text-[10px] text-slate-500">Desarrollo Web</span>
+          </div>
+
+          <div class="p-3 rounded-xl bg-slate-100 dark:bg-slate-800/50 hover:bg-brand-500/10 transition-colors">
+            <i class="fa-brands fa-html5 text-2xl text-orange-500 mb-1"></i>
+            <div class="font-bold text-xs text-slate-800 dark:text-slate-200">HTML5 &amp; CSS3</div>
+            <span class="text-[10px] text-slate-500">Estructura &amp; Estilos</span>
+          </div>
+
+          <div class="p-3 rounded-xl bg-slate-100 dark:bg-slate-800/50 hover:bg-brand-500/10 transition-colors">
+            <i class="fa-brands fa-js text-2xl text-yellow-400 mb-1"></i>
+            <div class="font-bold text-xs text-slate-800 dark:text-slate-200">JavaScript</div>
+            <span class="text-[10px] text-slate-500">Lógica Frontend</span>
+          </div>
+
+          <div class="p-3 rounded-xl bg-slate-100 dark:bg-slate-800/50 hover:bg-brand-500/10 transition-colors">
+            <i class="fa-brands fa-python text-2xl text-blue-500 mb-1"></i>
+            <div class="font-bold text-xs text-slate-800 dark:text-slate-200">Python</div>
+            <span class="text-[10px] text-slate-500">Algoritmos &amp; Datos</span>
+          </div>
+
+          <div class="p-3 rounded-xl bg-slate-100 dark:bg-slate-800/50 hover:bg-brand-500/10 transition-colors">
+            <i class="fa-brands fa-java text-2xl text-red-500 mb-1"></i>
+            <div class="font-bold text-xs text-slate-800 dark:text-slate-200">Java</div>
+            <span class="text-[10px] text-slate-500">Programación POO</span>
+          </div>
+
+          <div class="p-3 rounded-xl bg-slate-100 dark:bg-slate-800/50 hover:bg-brand-500/10 transition-colors">
+            <i class="fa-solid fa-database text-2xl text-sky-500 mb-1"></i>
+            <div class="font-bold text-xs text-slate-800 dark:text-slate-200">SQL &amp; XAMPP</div>
+            <span class="text-[10px] text-slate-500">Bases de datos</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 03: FORMACIÓN ACADÉMICA Y CERTIFICACIONES -->
+  <section id="formacion" class="py-16 bg-white dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-brand-600 dark:text-brand-400 font-bold text-xs uppercase tracking-widest">03 · Preparación</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Formación Académica &amp; Cursos</h2>
+        <div class="w-12 h-1 bg-brand-500 mx-auto mt-3 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Formación Académica Formal -->
+        <div class="space-y-4">
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-4">
+            <i class="fa-solid fa-graduation-cap text-brand-500"></i>
+            Grados Académicos
+          </h3>
+
+          <div class="glass-card p-5 rounded-2xl border-l-4 border-l-brand-500">
+            <div class="flex justify-between items-start">
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-base">Ingeniería en Informática</h4>
+                <p class="text-xs text-brand-600 dark:text-brand-400 font-medium">Tecnológico de Estudios Superiores de San Felipe del Progreso (TESSFP)</p>
+              </div>
+              <span class="px-2.5 py-1 bg-brand-100 text-brand-800 dark:bg-brand-900/60 dark:text-brand-300 text-[10px] font-bold rounded-full">En Curso</span>
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2">
+              Formación avanzada en ingeniería de software, arquitectura de sistemas, IoT y administración de proyectos tecnológicos.
+            </p>
+          </div>
+
+          <div class="glass-card p-5 rounded-2xl border-l-4 border-l-emerald-500">
+            <div class="flex justify-between items-start">
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-base">Técnico en Informática</h4>
+                <p class="text-xs text-emerald-600 dark:text-emerald-400 font-medium">CBT Lic. Mario Colín Sánchez, Atlacomulco</p>
+              </div>
+              <span class="px-2.5 py-1 bg-emerald-100 text-emerald-800 dark:bg-emerald-900/60 dark:text-emerald-300 text-[10px] font-bold rounded-full">Titulada</span>
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-300 mt-2">
+              Título oficial acreditado con especialización en mantenimiento de cómputo, desarrollo de sitios web, XAMPP, Java y HTML.
+            </p>
+          </div>
+
+          <div class="glass-card p-5 rounded-2xl border-l-4 border-l-slate-400">
+            <h4 class="font-bold text-slate-900 dark:text-white text-sm">Educación Media Superior</h4>
+            <p class="text-xs text-slate-500">COBAEM, Plantel 29</p>
+          </div>
+        </div>
+
+        <!-- Cursos y Certificaciones -->
+        <div class="space-y-4">
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-4">
+            <i class="fa-solid fa-certificate text-emerald-500"></i>
+            Cursos &amp; Capacitación Especializada
+          </h3>
+
+          <div class="glass-card p-5 rounded-2xl">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-10 h-10 rounded-lg bg-red-500/10 text-red-600 flex items-center justify-center font-bold text-lg">
+                <i class="fa-solid fa-database"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-sm">Oracle · Fundamentos de Bases de Datos</h4>
+                <span class="text-[11px] text-slate-500">Gestión de Información &amp; SQL</span>
+              </div>
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-300">
+              Formación estructurada enfocada en la organización, diseño de esquemas relacionales y consultas eficientes SQL.
+            </p>
+          </div>
+
+          <div class="glass-card p-5 rounded-2xl">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-10 h-10 rounded-lg bg-red-500/10 text-red-500 flex items-center justify-center font-bold text-lg">
+                <i class="fa-solid fa-brain"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-sm">Huawei · Machine Learning</h4>
+                <span class="text-[11px] text-slate-500">Inteligencia Artificial &amp; Análisis de Datos</span>
+              </div>
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-300">
+              Fundamentos de aprendizaje automático, patrones de datos e introducción a modelos de IA.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 04: PORTAFOLIO DE PROYECTOS -->
+  <section id="proyectos" class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-brand-600 dark:text-brand-400 font-bold text-xs uppercase tracking-widest">04 · Trabajos</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Portafolio de Proyectos Destacados</h2>
+        <p class="text-slate-600 dark:text-slate-400 text-sm mt-2">Soluciones tecnológicas desarrolladas durante mi trayectoria académica y profesional.</p>
+      </div>
+
+      <!-- Cuadrícula de Proyectos -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="glass-card p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <span class="px-2.5 py-1 rounded-md bg-brand-500/10 text-brand-600 dark:text-brand-400 text-xs font-bold mb-3 inline-block">IoT &amp; RFID</span>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Lotería Interactiva Mazahua</h3>
+            <p class="text-slate-600 dark:text-slate-300 text-xs leading-relaxed">
+              Sistema didáctico interactivo que integra microcontroladores ESP32 y tecnología RFID para promover y facilitar el aprendizaje de vocabulario tradicional en lengua mazahua.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs font-semibold text-slate-500">
+            <span>ESP32 · RFID · Python</span>
+            <span class="text-brand-500">Proyecto Educativo</span>
+          </div>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <span class="px-2.5 py-1 rounded-md bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-bold mb-3 inline-block">Monitoreo &amp; Hardware</span>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Prototipo de Consumo Eléctrico</h3>
+            <p class="text-slate-600 dark:text-slate-300 text-xs leading-relaxed">
+              Desarrollo de prototipo electrónico orientado al sensado y visualización de datos de consumo de energía eléctrica mediante hardware embebido y conectividad inalámbrica.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs font-semibold text-slate-500">
+            <span>Sensores · ESP32</span>
+            <span class="text-emerald-500">IoT Aplicado</span>
+          </div>
+        </div>
+
+        <div class="glass-card p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <span class="px-2.5 py-1 rounded-md bg-amber-500/10 text-amber-600 dark:text-amber-400 text-xs font-bold mb-3 inline-block">Desarrollo Web</span>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Portafolio Web Profesional &amp; Gestor</h3>
+            <p class="text-slate-600 dark:text-slate-300 text-xs leading-relaxed">
+              Sitio web moderno diseñado con Tailwind CSS y Astro, con un módulo interactivo local (LocalStorage) para gestionar y dar seguimiento a evidencias de actividades técnicas.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs font-semibold text-slate-500">
+            <span>Astro · Tailwind · JS</span>
+            <span class="text-amber-500">Plataforma Web</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 05: GESTOR DE ACTIVIDADES Y EVIDENCIAS -->
+  <section id="actividades" class="py-16 bg-white dark:bg-slate-900/50 border-y border-slate-200 dark:border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-brand-600 dark:text-brand-400 font-bold text-xs uppercase tracking-widest">05 · Módulo Interactivo</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Gestor de Actividades y Evidencias</h2>
+        <p class="text-slate-600 dark:text-slate-400 text-sm mt-2">Registra y administra tus prácticas de redes, soporte técnico, mantenimiento y desarrollo web.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        
+        <!-- Formulario para Registrar Actividad -->
+        <div class="lg:col-span-5 glass-card p-6 rounded-2xl shadow-lg space-y-4">
+          <h3 class="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <i class="fa-solid fa-circle-plus text-brand-500"></i>
+            Agregar Nueva Actividad
+          </h3>
+
+          <form id="activityForm" onsubmit="handleActivitySubmit(event)" class="space-y-4">
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Título de la Práctica o Tarea</label>
+              <input type="text" id="actTitle" required placeholder="Ej. Ponchado de cable UTP categoría 6" class="w-full px-3 py-2 text-sm rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500">
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Categoría Técnica</label>
+              <select id="actCategory" class="w-full px-3 py-2 text-sm rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500">
+                <option value="Redes & Hardware">Redes &amp; Hardware (Ponchado Ethernet)</option>
+                <option value="Mantenimiento PC">Mantenimiento Preventivo / Correctivo (PC, SSD, RAM)</option>
+                <option value="Impresoras">Soporte a Impresoras (Inyección / Láser)</option>
+                <option value="Desarrollo Web">Desarrollo Web &amp; Astro</option>
+                <option value="IoT & Proyectos">IoT &amp; Proyectos (ESP32 / RFID)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Descripción / Procedimiento</label>
+              <textarea id="actDesc" rows="3" required placeholder="Detalla los pasos realizados, herramientas o resultados..." class="w-full px-3 py-2 text-sm rounded-lg bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500"></textarea>
+            </div>
+
+            <div>
+              <label class="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">Evidencia Fotográfica (Opcional)</label>
+              <input type="file" id="actImage" accept="image/*" class="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-brand-50 file:text-brand-700 dark:file:bg-brand-950 dark:file:text-brand-300 hover:file:bg-brand-100 cursor-pointer">
+            </div>
+
+            <button type="submit" class="w-full py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm shadow-md transition-colors flex items-center justify-center gap-2">
+              <i class="fa-solid fa-cloud-arrow-up"></i>
+              Guardar Actividad en el Historial
+            </button>
+          </form>
+        </div>
+
+        <!-- Lista de Actividades Registradas -->
+        <div class="lg:col-span-7 space-y-4">
+          <div class="flex items-center justify-between">
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Historial de Actividades Registradas</h3>
+            <span id="activityCount" class="text-xs px-2.5 py-1 rounded-full bg-brand-500/10 text-brand-600 dark:text-brand-400 font-bold">0 actividades</span>
+          </div>
+
+          <div id="activitiesContainer" class="space-y-3 max-h-[500px] overflow-y-auto pr-2 custom-scrollbar">
+            <!-- Las actividades se cargan dinámicamente aquí -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 06: CONTACTO & METAS -->
+  <section id="contacto" class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-brand-600 dark:text-brand-400 font-bold text-xs uppercase tracking-widest">06 · Comunicación</span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">Contacto &amp; Metas Profesionales</h2>
+        <div class="w-12 h-1 bg-brand-500 mx-auto mt-3 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <div class="glass-card p-6 sm:p-8 rounded-2xl space-y-6">
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white">Información de Contacto</h3>
+          
+          <div class="space-y-4 text-sm text-slate-600 dark:text-slate-300">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-brand-500/10 text-brand-600 flex items-center justify-center font-bold">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-400">Correo Electrónico</div>
+                <div class="font-semibold text-slate-900 dark:text-white">yuridiagarciamartinez2403@gmail.com</div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center font-bold">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-400">Teléfonos de Contacto</div>
+                <div class="font-semibold text-slate-900 dark:text-white">712 207 7296 / 729 286 3638</div>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center font-bold">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-400">Ubicación &amp; Institución</div>
+                <div class="font-semibold text-slate-900 dark:text-white">San Felipe del Progreso, Estado de México</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card p-6 sm:p-8 rounded-2xl space-y-6">
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white">Metas Profesionales</h3>
+          <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+            Consolidarme como una profesional altamente capacitada en el desarrollo de software e infraestructura tecnológica, aportando soluciones eficientes en el sector público o privado, contribuyendo a la transformación digital y manteniendo un aprendizaje constante en nuevas herramientas de programación.
+          </p>
+
+          <div class="pt-4 border-t border-slate-200 dark:border-slate-800 flex gap-3">
+            <a href="mailto:yuridiagarciamartinez2403@gmail.com" class="px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-xs font-semibold transition-colors flex items-center gap-2">
+              <i class="fa-solid fa-paper-plane"></i> Enviar Mensaje
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 text-xs mt-auto">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <p class="font-semibold text-slate-200">Yuridia García Martínez</p>
+        <p class="text-[11px] text-slate-500 mt-0.5">Técnica e Ingeniera en Informática · Portafolio Profesional</p>
+      </div>
+      <p class="text-[11px]">© 2026 Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS DE INTERACTIVIDAD Y GESTOR DE ACTIVIDADES -->
+  <script>
+    // Toggle Modo Oscuro / Claro
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    themeToggleBtn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+    });
+
+    // Menú Móvil Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // GESTOR DE ACTIVIDADES (LocalStorage)
+    let activities = JSON.parse(localStorage.getItem('yuridia_activities')) || [
+      {
+        id: 1,
+        title: "Ponchado y prueba de cables UTP Categoría 6",
+        category: "Redes & Hardware",
+        desc: "Crimpado de conectores RJ45 bajo estándar T568B y verificación de continuidad con probador de red LAN.",
+        date: "2026-06-10",
+        image: null
+      },
+      {
+        id: 2,
+        title: "Mantenimiento preventivo y cambio a SSD en Laptop",
+        category: "Mantenimiento PC",
+        desc: "Limpieza interna, cambio de pasta térmica, reemplazo de disco duro por SSD de 480GB e instalación de SO.",
+        date: "2026-06-12",
+        image: null
+      }
+    ];
+
+    function handleActivitySubmit(event) {
+      event.preventDefault();
+      const title = document.getElementById('actTitle').value;
+      const category = document.getElementById('actCategory').value;
+      const desc = document.getElementById('actDesc').value;
+      const imageInput = document.getElementById('actImage');
+
+      if (imageInput.files && imageInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          saveNewActivity(title, category, desc, e.target.result);
+        };
+        reader.readAsDataURL(imageInput.files[0]);
+      } else {
+        saveNewActivity(title, category, desc, null);
+      }
+    }
+
+    function saveNewActivity(title, category, desc, imageUrl) {
+      const newAct = {
+        id: Date.now(),
+        title,
+        category,
+        desc,
+        date: new Date().toISOString().split('T')[0],
+        image: imageUrl
+      };
+
+      activities.unshift(newAct);
+      localStorage.setItem('yuridia_activities', JSON.stringify(activities));
+      document.getElementById('activityForm').reset();
+      renderActivities();
+    }
+
+    function deleteActivity(id) {
+      activities = activities.filter(act => act.id !== id);
+      localStorage.setItem('yuridia_activities', JSON.stringify(activities));
+      renderActivities();
+    }
+
+    function renderActivities() {
+      const container = document.getElementById('activitiesContainer');
+      const counter = document.getElementById('activityCount');
+
+      counter.textContent = `${activities.length} actividades`;
+
+      if (activities.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-8 glass-card rounded-xl text-slate-400 text-xs">
+            <i class="fa-solid fa-folder-open text-2xl mb-1 text-brand-500"></i>
+            <p>No hay actividades registradas todavía.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = activities.map(act => `
+        <div class="glass-card p-4 rounded-xl space-y-2 relative group">
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-brand-500/10 text-brand-600 dark:text-brand-400">${act.category}</span>
+              <h4 class="font-bold text-sm text-slate-900 dark:text-white mt-1">${act.title}</h4>
+            </div>
+            <button onclick="deleteActivity(${act.id})" class="text-slate-400 hover:text-red-500 transition-colors p-1" title="Eliminar actividad">
+              <i class="fa-solid fa-trash-can text-xs"></i>
+            </button>
+          </div>
+          <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">${act.desc}</p>
+          ${act.image ? `<div class="mt-2 rounded-lg overflow-hidden border border-slate-700 max-h-40"><img src="${act.image}" alt="Evidencia" class="w-full h-full object-cover"></div>` : ''}
+          <div class="flex items-center justify-between text-[10px] text-slate-400 pt-2 border-t border-slate-200 dark:border-slate-800">
+            <span><i class="fa-regular fa-calendar mr-1"></i> ${act.date}</span>
+            <span class="text-emerald-500 font-semibold">Guardado localmente</span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Inicializar render
+    renderActivities();
+  </script>
+</body>
+</html>
