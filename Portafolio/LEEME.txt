@@ -1,0 +1,16 @@
+PORTAFOLIO PROFESIONAL - YURIDIA GARCÍA MARTÍNEZ
+
+Archivos:
+- index.html: página principal con CV, catálogo de proyectos, seis actividades y gestor de evidencias.
+- CV_Yuridia_Garcia_Martinez.pdf: currículum descargable.
+
+Uso:
+1. Extrae el ZIP.
+2. Abre index.html en un navegador para revisar el portafolio.
+3. Para publicarlo, sube index.html y el PDF al mismo directorio de tu sitio web.
+4. El gestor guarda los registros en el navegador actual (localStorage); no sincroniza entre dispositivos.
+5. Completa las fechas y adjunta tus evidencias reales antes de entregar el portafolio.
+
+Nota:
+La página usa un monograma temporal en lugar de fotografía. Sustitúyelo por tu fotografía oficial si deseas incluirla.
+El teléfono incluido es 712 126 7095, tomado del apartado de contacto más reciente que compartiste; confirma que sea el correcto.

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Identidad Profesional y Vocación | Yuridia García</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .section-card {
+      background: var(--bg-dark);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+    }
+    .section-card h4 {
+      color: var(--primary-color);
+      font-size: 17px;
+      margin-bottom: 14px;
+      font-weight: 700;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 8px;
+    }
+    .info-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 16px 0;
+    }
+    .info-list li {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+    .info-list li b {
+      color: var(--text-main);
+    }
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 13px;
+    }
+    .matrix-table th, .matrix-table td {
+      border: 1px solid var(--card-border);
+      padding: 10px 12px;
+      text-align: left;
+    }
+    .matrix-table th {
+      background: var(--header-bg);
+      color: var(--primary-color);
+    }
+    .source-link {
+      color: var(--primary-color);
+      text-decoration: underline;
+      font-weight: 600;
+    }
+
+    /* --- ESTILOS LITERALES PARA EL ÁRBOL DE DECISIONES ÉTICAS --- */
+    .tree-wrapper {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+    .tree-root {
+      background: var(--card-bg);
+      border: 2px solid var(--primary-color);
+      color: var(--text-main);
+      padding: 16px 20px;
+      border-radius: 10px;
+      text-align: center;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 4px 12px rgba(6, 182, 212, 0.15);
+      font-weight: 700;
+      font-size: 14.5px;
+      z-index: 2;
+    }
+    .tree-branches-container {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      margin-top: 24px;
+      gap: 20px;
+      position: relative;
+    }
+    .tree-branch {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 16px;
+      flex: 1;
+      max-width: 450px;
+      position: relative;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    .tree-branch.option-a {
+      border-top: 4px solid #f59e0b; /* Alerta / Precaución */
+    }
+    .tree-branch.option-b {
+      border-top: 4px solid var(--primary-color); /* Óptimo / Ético */
+    }
+    .tree-branch h5 {
+      font-size: 14px;
+      margin-bottom: 8px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .tree-branch p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 6px;
+    }
+    @media(max-width: 850px) {
+      .tree-branches-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top-header">
+    <div class="brand-container">
+      <img src="yuli.jpg" alt="Yuridia García" class="top-avatar">
+      <div class="brand-text">
+        <h2>Yuridia García Martínez</h2>
+        <span>5.º Semestre · Ingeniería Informática</span>
+      </div>
+    </div>
+    
+    <nav class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="proyectos-cv.html">CV</a>
+      <a href="desarrollo_personal_y_emocional.html">Desarrollo personal y social</a>
+      <a href="aprendizaje_y_proyectos.html">Aprendizaje y proyectos</a>
+      <a href="identidad_profesional_y_vocacion.html" class="active">Identidad profesional y vocación</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="gestor.html" class="highlight-btn">Gestor</a>
+      <button class="theme-toggle-btn" id="themeToggle" title="Cambiar modo">☀️</button>
+    </nav>
+  </header>
+
+  <main class="content-container">
+    <div style="margin-bottom: 20px;">
+      <span style="color: var(--primary-color); font-weight: 700; font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;">Eje · Profesional y Vocacional</span>
+      <h1 style="font-size: 24px; color: var(--text-main); margin-top: 2px;">Identidad Profesional y Vocación</h1>
+    </div>
+
+    <!-- ACTIVIDAD 1: PLAN DE CARRERA Y MAPA DE BRECHAS -->
+    <div class="cv-block">
+      <span class="badge-tag">Actividad Vocacional · Ruta de Carrera</span>
+      <h3>Plan de Carrera y Mapa de Brechas de Habilidades</h3>
+      
+      <div class="section-card" style="margin-top: 15px;">
+        <h4>1. Investigación de Perfiles y Fuentes de Consulta</h4>
+        <ul class="info-list">
+          <li><b>Perfil 1: Cybersecurity Specialist / Ethical Hacker (Especialista en Ciberseguridad).</b> Profesional autorizado para evaluar la seguridad de sistemas, redes y aplicaciones, descubriendo vulnerabilidades antes de ser explotadas. <br>👉 <i>Fuente oficial:</i> <a href="https://ecuador.unir.net/actualidad-unir/funciones-ethical-hacker/" target="_blank" class="source-link">UNIR - Funciones Ethical Hacker</a>.</li>
+          <li><b>Perfil 2: Mobile Application Developer (Desarrollador de Aplicaciones Móviles).</b> Ingeniero de software encargado de diseñar, programar y actualizar aplicaciones para smartphones con arquitectura de código limpia. <br>👉 <i>Fuente oficial:</i> <a href="https://www.indeed.com/career-advice/finding-a-job/what-is-mobile-app-developer" target="_blank" class="source-link">Indeed - What Is a Mobile App Developer</a>.</li>
+        </ul>
+
+        <h4 style="margin-top: 20px;">2. Mapa de Brechas de Habilidades (Comparación con Estado Actual)</h4>
+        <table class="matrix-table">
+          <thead>
+            <tr>
+              <th>Competencia / Habilidad</th>
+              <th>Estado Actual (Universitario)</th>
+              <th>Requerimiento Ciberseguridad</th>
+              <th>Requerimiento Desarrollador Móvil</th>
+              <th>Brecha Detectada</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>Lógica de Programación</b></td>
+              <td>Alto (Lógica estructurada y depuración).</td>
+              <td>Análisis de código para detección de vulnerabilidades.</td>
+              <td>Manejo de lenguajes móviles y control de versiones.</td>
+              <td><b>Brecha Media:</b> Adaptación a librerías especializadas.</td>
+            </tr>
+            <tr>
+              <td><b>Bases de Datos</b></td>
+              <td>Alto (Modelado ER, 3FN, SQL).</td>
+              <td>Seguridad en datos (prevención de SQL Injection).</td>
+              <td>Almacenamiento local ligero y persistencia.</td>
+              <td><b>Brecha Baja:</b> La base relacional sólida facilita el dominio.</td>
+            </tr>
+            <tr>
+              <td><b>Redes e Infraestructura</b></td>
+              <td>Intermedio (Configuración y redes LAN).</td>
+              <td>Auditoría de tráfico de red y firewalls.</td>
+              <td>Consumo de servicios mediante APIs RESTful.</td>
+              <td><b>Brecha Alta (para Ciberseguridad):</b> Requiere análisis perimetral.</td>
+            </tr>
+            <tr>
+              <td><b>Arquitectura de Software</b></td>
+              <td>Intermedio (Proyectos universitarios).</td>
+              <td>Modelos de seguridad y normativas.</td>
+              <td>Patrones de arquitectura móvil y UI/UX.</td>
+              <td><b>Brecha Media (para Móvil):</b> Transición a arquitecturas escalables.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4 style="margin-top: 20px;">3. Plan de Formación de Seis Meses</h4>
+        <ul class="info-list">
+          <li><b>Mes 1:</b> Fundamentos avanzados de redes y configuración de entornos de desarrollo móvil (Android Studio / Flutter).</li>
+          <li><b>Mes 2:</b> Ciberseguridad web, análisis del OWASP Top 10 y prevención de vulnerabilidades.</li>
+          <li><b>Mes 3:</b> Arquitectura y desarrollo de aplicaciones móviles con patrones limpios.</li>
+          <li><b>Mes 4:</b> Consumo seguro de APIs RESTful, tokens de autenticación y cifrado de datos locales.</li>
+          <li><b>Mes 5:</b> Pruebas de penetración, sanitización de entradas y auditoría de código propio.</li>
+          <li><b>Mes 6:</b> Proyecto integrador de portafolio combinando app móvil segura y conectividad de datos.</li>
+        </ul>
+      </div>
+
+      <div class="reflection-box">
+        <strong style="color: var(--primary-color); display: block; margin-bottom: 4px;">Reflexión de Cierre:</strong>
+        ¿Qué competencia necesitas priorizar y por qué? <br>
+        La competencia que necesito priorizar de forma inmediata es el análisis profundo de redes e infraestructura de seguridad. Si bien cuento con un perfil técnico sólido en programación estructurada y bases de datos relacionales, el área de ciberseguridad representa la brecha más alta respecto a los requerimientos del mercado. Dominar la seguridad perimetral no solo me abrirá puertas en el hacking ético, sino que aportará un valor diferenciador enorme a mi perfil como desarrolladora móvil.
+      </div>
+    </div>
+
+    <!-- ACTIVIDAD 2: ÉTICA PROFESIONAL Y ÁRBOL DE DECISIONES FORMATO ÁRBOL -->
+    <div class="cv-block">
+      <span class="badge-tag">Actividad Ética · Dilema Tecnológico e Inteligencia Artificial</span>
+      <h3>Ética Profesional</h3>
+      
+      <div class="section-card" style="margin-top: 15px;">
+        <h4>Caso Multimedia: Sesgo Algorítmico y Privacidad en Sistemas de Selección con Inteligencia Artificial</h4>
+        
+        <ul class="info-list">
+          <li><b>Hechos del Caso:</b> Una corporación multinacional encarga al departamento de ingeniería el despliegue de un sistema automatizado basado en Inteligencia Artificial y Machine Learning para filtrar y seleccionar currículums de candidatos a puestos técnicos. Durante las pruebas internas, se descubre que el modelo de IA penaliza sistemáticamente a ciertos perfiles demográficos y géneros porque fue entrenado con datos históricos sesgados de contrataciones pasadas, además de almacenar historiales personales sin anonimización rigurosa.</li>
+          <li><b>Partes Afectadas:</b> Los aspirantes a empleo (afectados por discriminación digital y violación a la confidencialidad de sus datos), el equipo de ingenieros desarrolladores (puestos en la disyuntiva de entregar el sistema rápido u objetar fallas técnicas) y la empresa contratante (expuesta a demandas por discriminación y daño a la imagen pública).</li>
+          <li><b>Dilema Tecnológico:</b> ¿Debe el especialista en informática desplegar el software de IA tal como lo exige la gerencia para cumplir con los plazos de entrega comerciales, o debe detener el proyecto para auditar, corregir los sesgos discriminatorios y garantizar la privacidad de los datos, aun retrasando el calendario corporativo?</li>
+        </ul>
+
+        <h4 style="margin-top: 24px;">Árbol de Decisiones Éticas (Estructura Gráfica)</h4>
+
+        <!-- REPRESENTACIÓN LITERAL EN FORMA DE ÁRBOL -->
+        <div class="tree-wrapper">
+          <!-- Nodo Raíz -->
+          <div class="tree-root">
+            🌿 DILENMA CENTRAL: Despliegue del Sistema de IA en Reclutamiento
+          </div>
+
+          <!-- Ramas del Árbol -->
+          <div class="tree-branches-container">
+            
+            <!-- Rama Izquierda (Opción A) -->
+            <div class="tree-branch option-a">
+              <h5>🔀 Ramificación A: Desplegar el sistema tal como está</h5>
+              <p><b>Acción:</b> Priorizar los plazos de entrega y las metas comerciales de la empresa.</p>
+              <p><b>Consecuencias:</b> Cumplimiento inmediato de contratos y menor costo operativo inicial. Sin embargo, genera discriminación digital sistémica, perpetuación de sesgos algorítmicos y graves violaciones a la privacidad de los candidatos.</p>
+            </div>
+
+            <!-- Rama Derecha (Opción B) -->
+            <div class="tree-branch option-b">
+              <h5>🔀 Ramificación B: Detener, auditar y corregir el modelo</h5>
+              <p><b>Acción:</b> Suspender el lanzamiento para depurar el dataset y aplicar anonimización de datos.</p>
+              <p><b>Consecuencias:</b> Fricción temporal con la gerencia por el retraso. No obstante, garantiza equidad laboral, protege la privacidad de los postulantes, evita demandas jurídicas y alinea el desarrollo con principios éticos fundamentales.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <p style="margin-top: 20px; font-size: 13.5px; color: var(--text-muted);">
+          <b>Decisión Argumentada en Principios Éticos:</b> Se selecciona de forma definitiva la <b>Ramificación B</b>, fundamentada en el principio ético de la <i>justicia algorítmica, la no discriminación y la transparencia profesional</i>. La automatización mediante Inteligencia Artificial jamás debe utilizarse para legitimar sesgos humanos ocultos bajo la falsa apariencia de neutralidad matemática.
+        </p>
+      </div>
+
+      <div class="reflection-box">
+        <strong style="color: var(--primary-color); display: block; margin-bottom: 4px;">Reflexión de Cierre:</strong>
+        ¿Qué responsabilidad asumirías como futuro profesionista? <br>
+        Como futura Ingeniera Informática, asumo la responsabilidad ineludible de supervisar críticamente cada algoritmo, base de datos y sistema inteligente que ayude a construir. La tecnología no es neutral; refleja los valores de quienes la programan. Por ello, mi compromiso profesional es diseñar soluciones informáticas que promuevan la inclusión, protejan rigurosamente la privacidad y sirvan como herramientas de justicia y desarrollo social, anteponiendo siempre la dignidad humana por encima de cualquier presión comercial.
+      </div>
+    </div>
+  </main>
+
+  <!-- Script para la persistencia del tema en todo el sitio -->
+  <script>
+    const savedTheme = localStorage.getItem('yuridia_theme');
+    const btn = document.getElementById('themeToggle');
+    if (savedTheme === 'light') { document.body.classList.add('light-mode'); btn.textContent = '🌙'; }
+    btn.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      let isLight = document.body.classList.contains('light-mode');
+      btn.textContent = isLight ? '🌙' : '☀️';
+      localStorage.setItem('yuridia_theme', isLight ? 'light' : 'dark');
+    });
+  </script>
+</body>
+</html>
